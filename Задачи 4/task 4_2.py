@@ -14,3 +14,7 @@ def main()
        print("no solution")
    else:
        print(rev_val)
+         
+
+if __name__=='__main__':
+   main()
