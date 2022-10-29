@@ -113,7 +113,44 @@ ____
 
 # Листинг 6_3
 ```py
+def main()
+    words = ["qwe", "ewq", "asd", "dsa", "dsas", "qwee", "zxc", "cxz", "xxz", "z", "s", "qweasdzxc", "zzxc"]
 
+    res = []
+    while len(words) > 0:
+        word = words.pop(0)
+        group = [word]
+
+        j = 0
+        size = len(words)
+        while j < size:
+            if sorted(list(word)) == sorted(list(words[j])):
+                group.append(words[j])
+                del words[j]
+                size -= 1
+                j -= 1
+            j += 1
+
+        res.append(group)
+
+print(res)
+
+if __name__ =="__main__":
+    main()
+```
+## Мой результат выполнения программы
+Input:
+["qwe", "ewq", "asd", "dsa", "dsas", "qwee", "zxc", "cxz", "xxz", "z", "s", "qweasdzxc", "zzxc"]
+Output:
+[['qwe', 'ewq'], ['asd', 'dsa'], ['dsas'], ['qwee'], ['zxc', 'cxz'], ['xxz'], ['z'], ['s'], ['qweasdzxc'], ['zzxc']]
+Input
+["a","a",""]
+Output
+[['a', 'a'], ['']]
+
+## Мое пояснение к программе
+### Данная программа сортирунт и группирует слова с одинаковым набором букв и(<->) одинаковой длины
+____
 
 
  
