@@ -1,7 +1,69 @@
 # 6_1
-```
+____
 ## Задается количество элементов в списке ( >4). Задается целочисленный список длины N. Задается цель. Необходимо найти сумму 4 чисел, которые равны цели или находятся близко к ней и вывести их.  
-```
+
 # Листинг 6_1
 ```py
+def main():
+    n = int(input())
+    arr = list(map(int, input().split()))
+    c = int(input())
+
+    stack = []
+
+    close_sum = abs(sum(arr[0:4]) - c)
+    close_arr = arr[0:4]
+    ind_1 = 0
+    ind_2 = 1
+    ind_3 = 2
+    ind_4 = 3
+    while True:
+        # Если первый индекс уперся, то закончить перебор
+        if ind_1 == len(arr) - 3 :
+            break;
+
+        summ = arr[ind_1] + arr[ind_2] + arr[ind_3] + arr[ind_4]
+        # Проверка сумм
+        if abs(summ - c) < close_sum:
+            close_sum = summ - c
+            close_arr = [arr[ind_1], arr[ind_2], arr[ind_3], arr[ind_4]]
+
+            if close_sum == 0:
+                break
+
+if __name__=="__main__":
+    main()
+```
+## Мой результат выполнения программы
+Input:  
+N = 5
+[1, 2, 4, -5,-2] 
+C = 1
+Output:
+[1,2,4,-5]
+2
+Input:  
+N = 6
+[4, -5, -7, 12,-2,5]
+C = -5
+Output:
+[4,-5,-7,5]
+-3
+Input:  
+N = 7
+[1,1,1,1,1,1,1]
+C = 5
+Output:
+[1,1,1,1]
+4
+Input:  
+N = 5
+[1,3,0,-4,8]
+C = 3
+Output:
+[1,0,-4,8]
+5
+
+## мое пояснениу к программе
+
 
