@@ -5,21 +5,21 @@ ___
 
 ## Листинг 4_1
 ```Py
-def main()
-val = input()                  // Вводим переменную с клавиатуры.
-num_list = list(map(int, val))   // Заводим список.
-is_polindrom = True         //    Сразу присваиваем значение'True' для палиндрома.
-
-size = int(len(num_list))        //   Переменная ,отвечающая за размер строки.
-for i in range(0, int(size / 2)):         //  Цикл проверяет размер сторки.
-    if num_list[i] != num_list[size - i-1]:     //    Св-во палиндрома: Должно читаться слева-направо и справа-налево одинаково.Проверка ,если это не так.
-        is_polindrom = False        //   число не является палиндромом.
+def main():
+    val = input()                  ## Вводим переменную с клавиатуры.
+    num_list = list(map(int, val))   ## Заводим список.
+    is_polindrom = True         ##    Сразу присваиваем значение'True' для палиндрома.
+    
+    size = int(len(num_list))        ##   Переменная ,отвечающая за размер строки.
+    for i in range(0, int(size / 2)):         ##  Цикл проверяет размер сторки.
+        if num_list[i] != num_list[size - i-1]:     ##    Св-во палиндрома: Должно читаться слева-направо и справа-налево одинаково.
+        is_polindrom = False        ##   число не является палиндромом.
         break
 
-if is_polindrom:      }
-    print("True")
-else:
-    print("False")         }// Выводит соответствующий результат.
+    if is_polindrom:      
+        print("True")
+    else:
+        print("False")         ## Выводит соответствующий результат.
     
     
 if __name__=='__main__':
@@ -40,22 +40,22 @@ ____
 
 ## Листинг 4_2
 ```py
-def main()
-   CHAR_MIN = -2**7       //нижний диапазон числа
-   CHAR_MAX = 2**7 - 1    //Верхний диапазон числа
+def main():
+    CHAR_MIN = -2**7       ## нижний диапазон числа
+    CHAR_MAX = 2**7 - 1    ## Верхний диапазон числа
 
-   val = int(input())     // введение переменной
+    val = int(input())     ## введение переменной
 
-   num_list = list(map(int, str(abs(val))))     // добавляем в список строчное введенное значение по модудю
-   num_list.reverse()                           
-   rev_val = int(''.join(map(str,num_list)))    // Присоединяем получившееся число
-   if val < 0:
-      rev_val *= -1      // избавляемся от отрицательности
+    num_list = list(map(int, str(abs(val))))     ## добавляем в список строчное введенное значение по модудю
+    num_list.reverse()                           
+    rev_val = int(''.join(map(str,num_list)))    ## Присоединяем получившееся число
+    if val < 0:
+       rev_val *= -1      ## избавляемся от отрицательности
 
-   if rev_val < CHAR_MIN or CHAR_MAX < rev_val: // Сравниваем с данными нами диапазонами
-       print("no solution")
-   else:
-       print(rev_val)    // выводим соответствующий результат
+    if rev_val < CHAR_MIN or CHAR_MAX < rev_val: ## Сравниваем с данными нами диапазонами
+        print("no solution")
+    else:
+        print(rev_val)    ## выводим соответствующий результат
          
 
 if __name__=='__main__':
@@ -78,41 +78,41 @@ ____
  
 ## Листинг 4_3
 ```py
-def(main)
-   def print_zigzag(string, k): // заводим функцию вывода строки
-        if k == 0:
-            return // если 0, то ничего не выводим
+def(main):
+    def print_zigzag(string, k): ## заводим функцию вывода строки
+         if k == 0:
+             return ## если 0, то ничего не выводим
 
-        if k == 1:
-            print(string) // если 1, то первоначальная строка остается неизменной
+         if k == 1:
+             print(string) ## если 1, то первоначальная строка остается неизменной
 
-        # Первая строка
-        for i in range(0, len(string), (k - 1) * 2): // формула для высчитывания промежуточных пробелов между символами первой строки
-            print(string[i], end='')
+         # Первая строка
+         for i in range(0, len(string), (k - 1) * 2): ## формула для высчитывания промежуточных пробелов между символами первой строки
+             print(string[i], end='')
 
-        # Средние строки
-        for i in range(1, k-1): 
-            is_down = True         
-            j = i
-            while j < len(string):    
-                print(string[j], end="")  
-                space = 0
-                if is_down:
-                    space = (k - i - 1) * 2  
-                else:
-                    space = (k - 1) * 2 - (k - i - 1) * 2  
-                j += space
-                is_down = not is_down  //  расчет пробелов и поставления символов в зависимости от введенного значения к
+         # Средние строки
+         for i in range(1, k-1): 
+             is_down = True         
+             j = i
+             while j < len(string):    
+                 print(string[j], end="")  
+                 space = 0
+                 if is_down:
+                     space = (k - i - 1) * 2  
+                 else:
+                     space = (k - 1) * 2 - (k - i - 1) * 2  
+                 j += space
+                 is_down = not is_down  ##  расчет пробелов и поставления символов в зависимости от введенного значения к
 
-        # Последняя строка
-        for i in range(k-1, len(string), (k-1) * 2):  // формула для последней строки
-            print(string[i], end='')
+         # Последняя строка
+         for i in range(k-1, len(string), (k-1) * 2):  ## формула для последней строки
+             print(string[i], end='')
 
 
-    string = input()  // вводы переменных
-    k = int(input())
+     string = input()  ## вводы переменных
+     k = int(input())
 
-    print_zigzag(string, k)  // вывод результата
+     print_zigzag(string, k)  ## вывод результата
 if __name__=='__main__':
     main()
 ```
