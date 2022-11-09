@@ -73,7 +73,7 @@ ____
  
  # Листинг 6_2
  ```py
- def main()
+ def main():
     from itertools import permutations
 
     arr = list(map(int, input().split()))
@@ -113,7 +113,7 @@ ____
 
 # Листинг 6_3
 ```py
-def main()
+def main():
     words = ["qwe", "ewq", "asd", "dsa", "dsas", "qwee", "zxc", "cxz", "xxz", "z", "s", "qweasdzxc", "zzxc"]
 
     res = []
