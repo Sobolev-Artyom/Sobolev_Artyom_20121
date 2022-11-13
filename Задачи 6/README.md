@@ -74,15 +74,15 @@ ____
  # Листинг 6_2
  ```py
  def main():
-    from itertools import permutations
+     from itertools import permutations
 
-    arr = list(map(int, input().split()))
-    set_items = set(permutations(arr))
-    res = []
-    for item in set_items:
-        res.append(list(item))
+     arr = list(map(int, input().split()))
+     set_items = set(permutations(arr))
+     res = []
+     for item in set_items:
+         res.append(list(item))
 
-    print(res)
+     print(res)
 
 
 if __name__=="__main__":
