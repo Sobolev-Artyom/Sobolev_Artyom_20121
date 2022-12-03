@@ -27,4 +27,49 @@ if __name__ == '__main__':
 ____
 
 # Листинг 9_2
+## Римские цифры и их вывод.
 ```py
+def main():
+    roma_arab_dict = {
+    'I': 1,
+    'V': 5,
+    'X': 10,
+    'L': 50,
+    'C': 100,
+    'D': 500,
+    'M': 1000
+    }
+
+    def from_roma_to_arab(string_number, roma_arab_dict):
+        if len(string_number) > 15 and len(string_number) < 1:
+            print("Некорректное количество символов")
+            return False
+        for symbol in string_number:
+            if symbol not in ['I', 'V', 'X', 'L', 'C', 'D', 'M']:
+                print("Некорректный символ")
+                return False
+
+        res_arab = 0
+        for index, symbol in enumerate(string_number):
+            if index == len(string_number)-1 or roma_arab_dict[symbol] >= roma_arab_dict[string_number[index+1]]:
+                res_arab += roma_arab_dict[symbol]
+            else:
+                res_arab -= roma_arab_dict[symbol]
+        return res_arab
+
+    print(from_roma_to_arab('MCMXCIV', roma_arab_dict))
+
+
+if __name__ =='__main__':
+    main()
+```    
+
+## Результат выполнения программы
+____
+
+# Листинг 9_3
+Напишите функцию get_pins(), которая принимает строку(предполагаемый PIN код) , и возвращает список строк с возможными вариантами. 
+Ввод PIN кода производится с клавиатуры. 
+
+```py
+
