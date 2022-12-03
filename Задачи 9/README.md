@@ -72,4 +72,37 @@ ____
 Ввод PIN кода производится с клавиатуры. 
 
 ```py
+def main():
+    pins_dict = {'1': ['1', '2', '4'],
+             '2': ['2', '1', '5', '3'],
+             '3': ['3', '2', '6'],
+             '4': ['4', '1', '5', '7'],
+             '5': ['2', '5', '6', '4', '8'],
+             '6': ['6', '3', '5', '9'],
+             '7': ['7', '4', '8'],
+             '8': ['8', '5', '9', '0', '7'],
+             '9': ['9', '6', '8'],
+             '0': ['0', '8']}
 
+
+    def get_pins(pin):
+        if len(pin) > 1:
+            all_variants = []
+            for close_digit in pins_dict[pin[0]]: #pins_dict['8'] - > ['8', '5', '9', '0', '7']
+                for digit in get_pins(pin[1:]):
+                    all_variants.append(digit + close_digit)
+            print(all_variants)
+            return all_variants
+        else:
+            return pins_dict[pin]
+
+    print(get_pins('11'))
+
+
+
+if __name__ =='__main__':
+    main()
+
+```
+## Результат выполнения программы
+____
