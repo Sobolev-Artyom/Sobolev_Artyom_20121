@@ -3,7 +3,7 @@
  
 ```py
 def main():
-    spisok = [['oleg pushkin',89765],['kirill mendeleev',54378],['john kun'],['ivan popov',98745]]
+    spisok = [['oleg pushkin',89765],['kirill mendeleev',54378],['john kun',''],['ivan popov',98745]]
 
 
 
@@ -12,9 +12,9 @@ def main():
         for place in massive:
             if len(place)==2:
                 bumagka[place[0]] = place[1]
-            else:
-                bumagka[place[0]] = None
-            return bumagka
+            if place[1]=='':
+                place[1] = None
+        return spisok
 
     print(santa_users(spisok))
 
