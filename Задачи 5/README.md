@@ -48,6 +48,55 @@ ____
 # Листинг 5_3
 С клавиатуры поступает строка, которая имеет только символы: '(', ')', '{', '}', '[' и ‘]’. Необходимо проверить правильно ли сформированы скобки. Если ВСЕ скобки сформированы правильно, то вывести True, если нет, то вывести самую длинную правильно сформированную подстроку скобок, если такой подстроки нету, то вывести False. (Сначала лучше сделать True и False, а потом работать с подстроками).
 ```py
+def main():
+    def is_correct(string):
+        valid_combinations = ['{}', '()', '[]']
+        end = ['}', ']', ')']
+        start = ['{', '[', '(']
+        result = []
+        for i in range(len(string)):
+            if string[i] in start:
+                result.append(string[i])
+                continue
+            if string[i] in end and result:
+                if result[-1] + string[i] in valid_combinations:
+                    result.pop()
+                else:
+                    return False
+            else:
+                return False
+        if result == []:
+            return True
+        else:
+            return False
+
+
+    def ex_3(my_str_2):
+        all_variants = []
+        if is_correct(my_str_2):
+            all_variants.append(my_str_2)
+            return True
+        for i in range(1, len(my_str_2)-1):
+            for j in range(1, len(my_str_2)-1):
+                if is_correct(my_str_2[i:-j]):
+                    all_variants.append(my_str_2[i:-j])
+        if all_variants == []:
+            return False
+        else:
+            return sorted(all_variants, key=lambda x: len(x))[-1]
+
+    print(ex_3('{[()]{[()]}}'))
+
+if __name__ == '__main__':
+    main()
+```
+## Результат выполнения программы
+Input: "()[]{}"
+Output: True
+Input: "(]"
+Output: False
+____
+
 
 
 
