@@ -57,18 +57,22 @@ ____
 
 ```py
 def main():
-    def S(n, k):
-    if n == k:
-        return 1
-    elif k == 0:
-        return 0
-    elif 0 < k and k <= n:
-        return S(n - 1, k - 1) + k * S(n - 1, k)
+    n = int(input)
+    k = int(input)
 
-print(S(15, 9))
-    
+    def S(n, k):
+        if n == k:
+            return 1
+        elif k == 0:
+            return 0
+        elif 0 < k and k <= n:
+            return S(n - 1, k - 1) + k * S(n - 1, k)
+
+    print(S(15, 9))
 
 if __name__ == "__main__":
+    main()    
+     
 ```
 ## Мой результат выполнения программы
 
