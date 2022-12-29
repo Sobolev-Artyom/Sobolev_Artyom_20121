@@ -34,17 +34,21 @@ ____
 
 ```py
 def main():
-    import itertools
-    i = []
-    stuff = [1,2,3]
-    for t in range(1,len(stuff)+1):
-        for subset in itertools.combinations(stuff,t):
-            f = set(subset)
-            i.append(f)
-    print(i,len(i))
-
+    import itertools 
+    
+    r = [] 
+    stuff = [1,1,3,4] 
+    for t in range(1, len(stuff) + 1): 
+        for subset in itertools.combinations(stuff, t): 
+            f = set(subset) 
+            if f not in r:
+                r.append(f)
+    print(r, len(r))
    
-if __name__ =='__main__':
+   
+
+if __name__ == "__main__":
+    main()    
 ```
 ## Мой результат выполнения программы
 
