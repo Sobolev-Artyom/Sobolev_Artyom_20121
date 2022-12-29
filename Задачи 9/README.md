@@ -3,23 +3,23 @@
  
 ```py
 def main():
-    spisok = [['oleg pushkin',89765],['kirill mendeleev',54378],['john kun',''],['ivan popov',98745]]
-
-
-
-    def santa_users(massive):
-        bumagka = {}
-        for place in massive:
-            if len(place)==2:
-                bumagka[place[0]] = place[1]
-            if place[1]=='':
-                place[1] = None
-        return spisok
+    spisok = [['Oleg C', 89765], ['Kirill B', 54378], ['John A'], ['Ivan P', 98745]] 
+ 
+    def santa_users(spisok): 
+        bumagka = {} 
+        for place in spisok: 
+            if len(place) == 2: 
+                bumagka[place[0]] = place[1] 
+            if len(place) == 1: 
+                bumagka[place[0]] = None 
+        return bumagka 
 
     print(santa_users(spisok))
+   
 
-if __name__ == '__main__':
-    main()
+if __name__ == "__main__":
+    main()    
+     
     
 ```
 ## Результат выполнения программы
