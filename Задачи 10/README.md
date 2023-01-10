@@ -48,7 +48,7 @@ def main():
             one_kas.append(kasatel(x_j, x_i))
         all_kas.append(one_kas)
 
-   plt.figure(figsize=(10, 5))
+    plt.figure(figsize=(10, 5))
     plt.plot(x,y, label = 'f(x) = 2*math.pow(x, 2) -3*x+7)*math.cos(7+math.pow(x, 2)/2');
     plt.grid()
 
